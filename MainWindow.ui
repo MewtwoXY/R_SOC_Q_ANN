@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_window</class>
+ <widget class="QMainWindow" name="main_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>693</width>
+    <height>547</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>693</width>
+    <height>547</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>693</width>
+    <height>547</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>锂离子电池容量估算平台V1.3</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>CSOC.ico</normaloff>CSOC.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="group_box_data_and_save">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>321</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>训练数据与保存结果</string>
+    </property>
+    <widget class="QLineEdit" name="line_edit_excel">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>60</y>
+       <width>181</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_excel">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>40</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>请选择你的Excel数据文件：</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="tool_button_find_excel">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>60</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_train_result">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>90</y>
+       <width>251</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>请选择你要保存训练结果及相关性分析的位置：</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="tool_button_save_train_result">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>110</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_train_result">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>110</y>
+       <width>181</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_c_fun">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>160</y>
+       <width>181</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="tool_button_save_c_fun">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>160</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_c_fun">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>140</y>
+       <width>161</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>请选择你要保存C函数的位置：</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="group_box_train_data">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>40</y>
+      <width>311</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>训练数据设置</string>
+    </property>
+    <widget class="QLabel" name="label_r">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>电阻所在列数：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_r">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>20</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_soc">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>50</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_soc">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>50</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SOC所在列数：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_c">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>110</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_c">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>110</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>容量所在列数：</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="check_box_choose_t">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>80</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>使用该自变量</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_t">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>80</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_t">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>80</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>温度所在列数：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_soh">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>140</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_soh">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>140</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SOH所在列数：</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="check_box_choose_soc">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>50</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>使用该自变量</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="push_button_correlation">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>170</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>相关性分析</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radio_button_choose_c">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>110</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>使用该因变量</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+     <property name="autoRepeat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radio_button_choose_soh">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>140</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>使用该因变量</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="push_button_about_train_data">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>10</y>
+       <width>16</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="group_box_ann">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>321</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>神经网络训练</string>
+    </property>
+    <widget class="QLabel" name="label_neuron">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>20</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>神经网络每个隐藏层神经元数量：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_neuron">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>40</y>
+       <width>201</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_epochs">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>70</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>训练次数：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_epochs">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>70</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_mini_batch_size">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>100</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_minibatchsize">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>100</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>每次训练样本数：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="line_edit_eta">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>130</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_eta">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>130</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>学习率：</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="push_button_ann">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>190</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>开始训练</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="push_button_about_ann">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>10</y>
+       <width>16</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>?</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_act">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>160</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>激活函数：</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="combo_box_act">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>160</y>
+       <width>81</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>Sigmoid</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>tanh</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ReLU</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Leaky ReLU</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="group_box_line">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>260</y>
+      <width>311</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>线性拟合</string>
+    </property>
+    <widget class="QSpinBox" name="spin_box_order">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>20</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>5</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_order">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>20</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>线性拟合阶数：</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="push_button_line">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>60</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>开始拟合</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="push_button_help">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>10</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>帮助</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="text_browser_tips">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>360</y>
+      <width>311</width>
+      <height>131</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>693</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>push_button_help</tabstop>
+  <tabstop>tool_button_find_excel</tabstop>
+  <tabstop>line_edit_excel</tabstop>
+  <tabstop>tool_button_save_train_result</tabstop>
+  <tabstop>line_edit_train_result</tabstop>
+  <tabstop>tool_button_save_c_fun</tabstop>
+  <tabstop>line_edit_c_fun</tabstop>
+  <tabstop>push_button_about_train_data</tabstop>
+  <tabstop>line_edit_r</tabstop>
+  <tabstop>check_box_choose_soc</tabstop>
+  <tabstop>line_edit_soc</tabstop>
+  <tabstop>check_box_choose_t</tabstop>
+  <tabstop>line_edit_t</tabstop>
+  <tabstop>radio_button_choose_c</tabstop>
+  <tabstop>line_edit_c</tabstop>
+  <tabstop>radio_button_choose_soh</tabstop>
+  <tabstop>line_edit_soh</tabstop>
+  <tabstop>push_button_correlation</tabstop>
+  <tabstop>push_button_about_ann</tabstop>
+  <tabstop>line_edit_neuron</tabstop>
+  <tabstop>line_edit_epochs</tabstop>
+  <tabstop>line_edit_mini_batch_size</tabstop>
+  <tabstop>line_edit_eta</tabstop>
+  <tabstop>push_button_ann</tabstop>
+  <tabstop>spin_box_order</tabstop>
+  <tabstop>push_button_line</tabstop>
+  <tabstop>text_browser_tips</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
