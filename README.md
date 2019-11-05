@@ -5,6 +5,8 @@
    界面设计：PyQt5、sys、os
    线程设计：threading、inspect、ctypes，numpy，pandas，prettytable，matplotlib，warnings
    相关文件：MainWindowFun.py、HelpWindowFun.py
+   
+   ====================================================================================
 2、功能实现
    相关性分析：
    1.	对用户的输入数据进行检测，方防止输入错误数据
