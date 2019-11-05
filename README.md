@@ -2,9 +2,12 @@
 
 
 1、功能设计
+   
    界面设计：PyQt5、sys、os
+   
    线程设计：threading、inspect、ctypes，numpy，
    pandas，prettytable，matplotlib，warnings
+   
    相关文件：MainWindowFun.py、HelpWindowFun.py
    
    ===============================================================================
